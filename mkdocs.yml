@@ -1,0 +1,7 @@
+site_name: gitsecret
+
+nav:
+  - Home: index.md
+  - Changelog: changelog.md
+
+theme: readthedocs

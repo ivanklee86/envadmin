@@ -1,0 +1,6 @@
+-i https://pypi.org/simple
+click==7.0
+gitdb2==2.0.5
+gitpython==2.1.11
+gitsecret==0.1.0
+smmap2==2.0.5
