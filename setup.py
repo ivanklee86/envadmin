@@ -28,5 +28,9 @@ setup(
         "Topic :: Software Development :: Version Control :: Git",
         "Topic :: Security",
         "License :: OSI Approved :: MIT License",
-    ]
+    ],
+    entry_points='''
+        [console_scripts]
+        envadmin=envadmin.cli:cli
+    '''
 )

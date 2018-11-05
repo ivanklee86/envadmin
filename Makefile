@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-PROJECT_NAME = gitsecret
+PROJECT_NAME = envadmin
 
 #-----------------------------------------------------------------------
 # Rules of Rules : Grouped rules that _doathing_
@@ -29,7 +29,8 @@ pytest:
 #-----------------------------------------------------------------------
 clean:
 	rm -rf build && \
-	rm -rf dist;
+	rm -rf dist && \
+	rm -rf ${PROJECT_NAME}.egg-info;
 
 generate-requirements:
 	pipenv lock -r > requirements.txt && \
