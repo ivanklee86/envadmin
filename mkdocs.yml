@@ -2,6 +2,7 @@ site_name: gitsecret
 
 nav:
   - Home: index.md
+  - CLI: cli.md
   - Changelog: changelog.md
 
 theme: readthedocs

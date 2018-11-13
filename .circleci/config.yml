@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/python:3.7.0
+      - image: cluelesshamster86/envadmin-build
     steps:
       - checkout
       - run:
@@ -15,8 +15,11 @@ jobs:
           name: Install package
           command: pipenv install -e .
       - run:
+          name: Create test folder.
+          command: mkdir ~/temp && mkdir ~/temp/envadmin_sandbox;
+      - run:
           name: Run tests.
-          command: pipenv run py.test --junitxml=pytest/results.xml --cov=envadmin tests
+          command: export PYTHONPATH=.; pipenv run py.test --reruns 2 --junitxml=pytest/results.xml --cov=envadmin
       - run:
           name: Lint code.
           command: pipenv run pylint envadmin -f parseable >> pylint.log

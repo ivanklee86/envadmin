@@ -8,6 +8,8 @@ PROJECT_NAME = envadmin
 
 test: lint pytest
 
+install: clean install-package
+
 build: clean generate-requirements build-package upload
 
 build-local: clean generate-requirements build-package
@@ -22,7 +24,7 @@ lint:
 
 pytest:
 	export PYTHONPATH=${ROOT_DIR}: $$PYTHONPATH && \
-	py.test -n 4 --cov ${PROJECT_NAME} tests/unit
+	py.test -n 4 --cov ${PROJECT_NAME} tests
 
 #-----------------------------------------------------------------------
 # Distribution
@@ -35,6 +37,9 @@ clean:
 generate-requirements:
 	pipenv lock -r > requirements.txt && \
 	pipenv lock -r --dev > requirements-dev.txt;
+
+install-package:
+	python setup.py install
 
 build-package:
 	python setup.py sdist bdist_wheel
