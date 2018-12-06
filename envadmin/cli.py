@@ -13,6 +13,8 @@ class Context():
     def __init__(self):
         self.verbose = False
         self.home = os.getcwd()
+        self.database = None
+        self.config = None
 
     def log(self, msg, *args):  # pylint: disable= R0201
         """Logs a message to stderr."""

@@ -6,6 +6,7 @@ from cryptography.fernet import Fernet
 from git.repo import Repo
 from gitsecret import GitSecret
 from tinydb import TinyDB
+from envadmin.constants import ENVADMIN_DB_NAME
 from envadmin.cli import pass_context, Context
 
 
@@ -49,7 +50,7 @@ def cli(ctx: Context, path: str, config_path: str, gpg_email: str, push: bool) -
     ctx.vlog("Generated encryption key.")
 
     # Initialize database
-    TinyDB(os.path.join(path, 'envadmin.json'))
+    TinyDB(os.path.join(path, ENVADMIN_DB_NAME), sort_keys=True, indent=4)
     ctx.vlog("envadmin database created.")
 
     # Commit and push to origin (if it exists).

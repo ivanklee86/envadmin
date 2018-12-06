@@ -44,3 +44,8 @@ def temp_envadmin_folder(runner, temp_git_folder):
                         "-c", temp_git_folder,
                         "-e", "test@test.com",
                         "--no-push"])
+
+    runner.invoke(cli, ["namespace",
+                        "-c", temp_git_folder,
+                        "create",
+                        "-n", "Namespace1"])
