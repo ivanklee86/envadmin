@@ -1,5 +1,6 @@
 from pathlib import Path
 import click
+from envadmin import constants
 from envadmin.cli import pass_context, Context
 from envadmin.utilities import config, db
 
@@ -31,7 +32,7 @@ def list(ctx: Context) -> None:  # pylint: disable=redefined-builtin
 def create(ctx: Context, namespace: str) -> None:
     """Creates a namespace in envadmin db."""
     if namespace not in ctx.database.tables():
-        ctx.database.table(name=namespace)
+        ctx.database.table(name=namespace).insert({'name': constants.DEFAULT_TABLE})
     else:
         raise click.ClickException("Namespace already present")
 

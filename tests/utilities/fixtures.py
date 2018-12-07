@@ -6,6 +6,7 @@ import pytest
 from click.testing import CliRunner
 from git.repo import Repo
 from envadmin.cli import cli
+from tests.utilities import constants
 
 
 PATH = os.path.join(Path.home(), "temp", "envadmin_sandbox", str(uuid.uuid4())[:8])
@@ -48,4 +49,4 @@ def temp_envadmin_folder(runner, temp_git_folder):
     runner.invoke(cli, ["namespace",
                         "-c", temp_git_folder,
                         "create",
-                        "-n", "Namespace1"])
+                        "-n", constants.NAMESPACE1])

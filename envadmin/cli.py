@@ -15,6 +15,8 @@ class Context():
         self.home = os.getcwd()
         self.database = None
         self.config = None
+        self.namespace = None
+        self.database_table = None
 
     def log(self, msg, *args):  # pylint: disable= R0201
         """Logs a message to stderr."""

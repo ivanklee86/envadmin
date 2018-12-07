@@ -33,4 +33,21 @@ Commands:
 
 ```
 
+## Variations
+Modifies variation(s)
 
+```shell
+Usage: envadmin variation [OPTIONS] COMMAND [ARGS]...
+
+  Variation-related tasks.
+
+Options:
+  -c, --config-path PATH  Folder to create .envadmin file.
+  -n, --namespace TEXT    Namespace to modify.
+  --help                  Show this message and exit.
+
+Commands:
+  create  Creates a variation for a namespace.
+  delete  Deletes a variation in envadmin db.
+  list    Lists all namespaces in envadmin db.
+```
