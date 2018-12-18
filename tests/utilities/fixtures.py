@@ -50,3 +50,14 @@ def temp_envadmin_folder(runner, temp_git_folder):
                         "-c", temp_git_folder,
                         "create",
                         "-n", constants.NAMESPACE1])
+
+    runner.invoke(cli, ["namespace",
+                        "-c", temp_git_folder,
+                        "create",
+                        "-n", constants.NAMESPACE2])
+
+    runner.invoke(cli, ["variation",
+                        "-c", temp_git_folder,
+                        "-n", constants.NAMESPACE2,
+                        "create",
+                        "-v", constants.VARIATION_2_1 ])

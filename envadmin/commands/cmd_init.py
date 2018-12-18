@@ -50,7 +50,7 @@ def cli(ctx: Context, path: str, config_path: str, gpg_email: str, push: bool) -
     ctx.vlog("Generated encryption key.")
 
     # Initialize database
-    TinyDB(os.path.join(path, ENVADMIN_DB_NAME), sort_keys=True, indent=4)
+    TinyDB(os.path.join(path, ENVADMIN_DB_NAME), sort_keys=True, indent=4, separators=(',', ': '))
     ctx.vlog("envadmin database created.")
 
     # Commit and push to origin (if it exists).

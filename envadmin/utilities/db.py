@@ -7,4 +7,4 @@ from envadmin.constants import ENVADMIN_DB_NAME
 def get_db(path_to_dir: pathlib.Path) -> TinyDB:
     path_to_db = os.path.join(path_to_dir, ENVADMIN_DB_NAME)
 
-    return TinyDB(str(path_to_db))
+    return TinyDB(str(path_to_db), sort_keys=True, indent=4, separators=(',', ': '))
